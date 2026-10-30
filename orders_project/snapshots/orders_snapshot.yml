@@ -1,0 +1,10 @@
+snapshots:
+  - name: orders_snapshot
+    relation: source('shop', 'raw_orders')
+    description: History of every order. A new row is added each time an order's status or amount changes.
+    config:
+      schema: snapshots
+      strategy: check
+      unique_key: id
+      check_cols: ['status', 'amt_cents']
+      hard_deletes: invalidate
