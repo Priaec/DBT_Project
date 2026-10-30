@@ -24,3 +24,14 @@ models:
           - not_null
       - name: total_revenue
         description: Sum of completed order amounts, in dollars.
+  
+  - name: daily_sales
+    description: 'One row per day with order counts, completed revenue and a running total.'
+    columns:
+      - name: order_date
+        data_tests:
+          - unique
+          - not_null
+      - name: revenue
+        data_tests:
+          - not_null
