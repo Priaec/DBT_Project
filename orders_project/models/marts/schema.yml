@@ -35,3 +35,14 @@ models:
       - name: revenue
         data_tests:
           - not_null
+
+  - name: daily_sales_all_days
+    description: 'One row per day with order counts, completed revenue and a running total in the entire window.'
+    columns:
+      - name: sales_date
+        data_tests:
+          - unique
+          - not_null
+      - name: revenue
+        data_tests:
+          - not_null
